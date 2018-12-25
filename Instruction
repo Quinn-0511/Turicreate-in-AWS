@@ -1,0 +1,59 @@
+Step 1  AWS EC2 Instance
+   1. Sign-up for AWS
+   2. Launch an Amazon EC2 Instance as introduced in here: https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/#
+   3. Select Ubuntu 16.04 LTS.
+   4. Download the *pem key file.
+Step 2 Connect the EC2 Instance
+
+
+
+ssh -i ~/.ssh/ec2bubble3.pem ubuntu@34.239.105.48(Public IP)
+
+
+
+
+
+Step3: Jupyter notebook
+1. sudo apt install python3-pip
+
+3. pip3 install jupyter
+
+if the kernel died,
+
+pip3 uninstall ipykernel ipython jupyter_client jupyter_core traitlets ipython_genutils
+pip3 install ipykernel ipython jupyter_client jupyter_core traitlets ipython_genutils
+
+4. jupyter notebook --no-browser --port=8888
+
+
+
+
+
+
+
+1. Install Filezilla: sudo apt-get install filezilla -y
+2. Install Putty: sudo apt-get install putty-tools
+3. Download .pem from the new establishe AWS branch.
+4. Change the access permit for the .pem: sudo ssh-keygen -p -f ec2bubble.pem
+5. A window will remind you to set a password.
+6. Open Filezilla. Edit - preferences - SFTP - Add key file -- select the .pem file.
+7. A window will come out to convert the .pem file. input the password. don't forget the file extension.
+8. click ok.
+9. Open site manager -- New site -- Host (Public DNS (IPv4))  -- Protocol (SFTP) --- Logon Type (Normal) -- user(ubuntu)
+   --- password(leave as blank)
+10. click connect
+
+
+
+Step 3: Establish the turicreate environment
+
+
+sudo apt-get install -y libblas3 liblapack3 libstdc++6 python-setuptools
+
+sudo apt-get install -y libblas3 liblapack3 libstdc++6 python-setuptools
+sudo easy_install pip
+sudo pip install virtualenv
+
+2. pip3 install -U turicreate
+
+Open another terminal:
